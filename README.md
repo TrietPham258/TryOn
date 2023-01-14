@@ -11,6 +11,9 @@ FullSail Emerging Technology Scholarship screencast (app)
 https://youtu.be/deKBAVLDZgw
 
 
+Promotion Video:
+https://drive.google.com/file/d/1H3GXX80GthyE0-7We9mfi7GwPRlzvo50/view
+
 How to run this program
 
 Follow this youtube video:
