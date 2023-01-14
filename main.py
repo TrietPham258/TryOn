@@ -60,7 +60,7 @@ class TailorApp(MDApp, Widget):
         self.id_lst = []
 
         # Available accounts
-        self.accounts = [['admin', 'password'], ['user', 'password'], ["admin", "nice"], ['', '']]
+        self.accounts = [['admin', 'password'], ['user', 'password']]
 
         # Fitting mode
         self.current_mode = "Automatic Mode"
