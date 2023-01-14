@@ -9,10 +9,10 @@ from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.utils import get_color_from_hex
 from kivymd.uix.slider import MDSlider
-from AppNavigationDrawer import ItemDrawer, ContentNavigationDrawer, DrawerList
-from FileManagement import FileManagement
-from UI import UI
-from Database_sqlite3 import MyDatabase
+from Components.AppNavigationDrawer import ItemDrawer, ContentNavigationDrawer, DrawerList
+from Components.FileManagement import FileManagement
+from Components.UI import UI
+from Components.Database_sqlite3 import MyDatabase
 from kivy.metrics import dp
 import sqlite3
 
@@ -43,8 +43,8 @@ class ConfirmButton(MDBoxLayout):
 
 class TailorApp(MDApp, Widget):
     def __init__(self, **kwargs):
-        self.icon = "images/App icon 2.png"
-        self.title = "Tailor App"
+        self.icon = "assets/images/App icon.png"
+        self.title = "Try on. Why not?"
         super().__init__(**kwargs)
 
         # Class Declaration
@@ -71,13 +71,13 @@ class TailorApp(MDApp, Widget):
 
     def build(self):
         self.theme_cls.theme_style = "Light"
-        Builder.load_file("LogIn.kv")
-        Builder.load_file("SignUp.kv")
-        Builder.load_file("Homepage.kv")
-        Builder.load_file("MeasurementPage.kv")
-        Builder.load_file("FittingPage.kv")
-        Builder.load_file("FittingRoom.kv")
-        Builder.load_file("CheckoutPage.kv")
+        Builder.load_file("Kivy_files/LogIn.kv")
+        Builder.load_file("Kivy_files/SignUp.kv")
+        Builder.load_file("Kivy_files/Homepage.kv")
+        Builder.load_file("Kivy_files/MeasurementPage.kv")
+        Builder.load_file("Kivy_files/FittingPage.kv")
+        Builder.load_file("Kivy_files/FittingRoom.kv")
+        Builder.load_file("Kivy_files/CheckoutPage.kv")
         return UI(transition=NoTransition())
     
     # Start function
@@ -99,7 +99,7 @@ class TailorApp(MDApp, Widget):
         # Add clothes for FittingRoom
         for i in range(1, 4, 2):
             self.root.ids.clothes.ids.box_clothes.add_widget(
-                CloButton(source=f"Sample Clothes/Shirt/shirt {i} front.png")
+                CloButton(source=f"assets/Sample Clothes/Shirt/shirt {i} front.png")
                 )
 
         # Size list - must specify here, can't use self.root.ids.drag_ob.size
@@ -226,13 +226,13 @@ class TailorApp(MDApp, Widget):
         if self.current_mode == "Sticker Mode":
             self.root.ids.fittingroom_layout.add_widget(self.root.ids.size_label)
             self.root.ids.fittingroom_layout.add_widget(self.root.ids.size_slider)
-            self.root.ids.drag_ob.source = "images/Blank Space.png"
+            self.root.ids.drag_ob.source = "assets/images/Blank Space.png"
             self.root.ids.drag_ob.size = 99, 132
             
         elif self.current_mode == "Automatic Mode":
             self.root.ids.fittingroom_layout.remove_widget(self.root.ids.size_slider)
             self.root.ids.fittingroom_layout.remove_widget(self.root.ids.size_label)
-            self.root.ids.drag_ob.source = "images/Blank Space.png"
+            self.root.ids.drag_ob.source = "assets/images/Blank Space.png"
             self.root.ids.drag_ob.drag_timeout = 0
 
     # Fitting Room
@@ -261,37 +261,37 @@ class TailorApp(MDApp, Widget):
                 self.current_type = "Automatic Shirts"
                 for i in range(1, 4, 2):
                     self.root.ids.clothes.ids.box_clothes.add_widget(
-                        CloButton(source=f"Sample Clothes/Shirt/shirt {i} front.png")
+                        CloButton(source=f"assets/Sample Clothes/Shirt/shirt {i} front.png")
                         )
             elif text == "Dresses":
                 # Example of Ao Dai
                 self.current_type = "Automatic Dresses"
                 for i in range(1, 2):
                     self.root.ids.clothes.ids.box_clothes.add_widget(
-                        CloButton(source=f"Sample Clothes/Dress/ao dai {i} front.png")
+                        CloButton(source=f"assets/Sample Clothes/Dress/ao dai {i} front.png")
                         )
             elif text == "Bottoms":
                 self.current_type = "Automatic Shorts"
                 for i in range(4, 8):
                     self.root.ids.clothes.ids.box_clothes.add_widget(
-                        CloButton(source=f"Sample Clothes/Short/short {i} front.png")
+                        CloButton(source=f"assets/Sample Clothes/Short/short {i} front.png")
                         )
         elif self.current_mode == "Sticker Mode":
             if text == "Tops":  
                 for i in range(1, 8):
                     self.root.ids.clothes.ids.box_clothes.add_widget(
-                        CloButton(source=f"Sample Clothes/Shirt/shirt {i} front.png")
+                        CloButton(source=f"assets/Sample Clothes/Shirt/shirt {i} front.png")
                         )
             elif text == "Dresses":
                 # Example of Ao Dai
                 for i in range(1, 3):
                     self.root.ids.clothes.ids.box_clothes.add_widget(
-                        CloButton(source=f"Sample Clothes/Dress/ao dai {i} front.png")
+                        CloButton(source=f"assets/Sample Clothes/Dress/ao dai {i} front.png")
                         )
             elif text == "Bottoms":
                 for i in range(1, 8):
                     self.root.ids.clothes.ids.box_clothes.add_widget(
-                        CloButton(source=f"Sample Clothes/Short/short {i} front.png")
+                        CloButton(source=f"assets/Sample Clothes/Short/short {i} front.png")
                         )
             
     # Change clothes size
@@ -301,10 +301,10 @@ class TailorApp(MDApp, Widget):
     # Confirm clothes and add clothes to checkout
     def fr_confirm_clothes(self):     
         # Reset the confirm button
-        if self.root.ids.drag_ob.source == "images/Blank Space.png":
+        if self.root.ids.drag_ob.source == "assets/images/Blank Space.png":
             pass
         else:
-            self.root.ids.order_list.add_widget(Product(source = self.root.ids.drag_ob.source, text=self.root.ids.drag_ob.source[21:29]))
+            self.root.ids.order_list.add_widget(Product(source = self.root.ids.drag_ob.source, text=self.root.ids.drag_ob.source[28:36]))
     
     # Clear order_list
     def ck_clear_order(self):

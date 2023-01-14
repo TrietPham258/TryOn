@@ -1,0 +1,204 @@
+#:kivy 2.1.0
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+#: import get_color_from_hex kivy.utils.get_color_from_hex
+
+
+<TitleLabel@MDLabel>
+    color: get_color_from_hex("#b2a575")
+    font_size: 15
+    minimum_width: 1
+
+<InputFirst@MDRelativeLayout>:
+    size_hint_y: None
+    height: text_field.height
+    hint_text: ""
+
+    MDTextField:
+        id: text_field
+        mode: "round"
+        hint_text: root.hint_text
+        fill_color_normal: 1, 1, 1, 1
+        text_color_normal: 0, 0, 0, 1
+        hint_text_color_normal: 0, 0, 0, .4
+        
+    MDIconButton:
+        icon: "help-circle"
+        ripple_scale: .5
+        pos_hint: {"center_y": .5}
+        pos: text_field.width - self.width + dp(8), 0
+        on_release:
+            self.icon = "help-circle-outline" if self.icon == "help-circle" else "help-circle" 
+            #text_field.password = False if text_field.password is True else True
+
+
+<InputAll@MDTextField>
+    font_size: 15
+    mode: "round"
+    fill_color_normal: 1, 1, 1, 1
+    hint_text_color_normal: 0, 0, 0, .4
+    text_color_normal: (0, 0, 0, 1)
+    
+
+<InputFemale@MDTextField>
+    #id: bra_size
+    hint_text: ""
+    InputAll:
+        id: root.id
+        hint_text: root.hint_text
+
+
+<StyleItemCheck@MDBoxLayout>:
+    group: ""
+    text: ""
+    active: False
+    adaptive_height: True
+
+    MDCheckbox:
+        group: root.group
+        active: root.active
+        size_hint: None, None
+        size: dp(48), dp(48)
+        pos_hint: {"center_y": .5}
+        on_active: app.specific_gender(root.text, self.active)
+        
+    MDLabel:
+        text: root.text
+        font_size: 15
+        color: (1, 1, 1, 1)    
+    
+
+<UI>
+    Screen:
+        name: "screen4"    
+        MDBoxLayout:
+            orientation: "vertical"
+            
+            canvas:
+                Color:
+                    rgba: (229/255, 224/255, 250/255, 1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            MDTopAppBar:
+                title: "Measurement page"
+                md_bg_color: get_color_from_hex('#30448b')
+                specific_text_color: 1, 1, 1, 1
+
+            MDLabel:
+                text: "This is where you will enter/change your measurements"
+                font_sizez: 20
+                valign: "center"
+                halign: "center"
+                color: (0, 0, 0, 1)
+                size_hint: 1, 0.2
+
+            MDSeparator:
+                color: 0, 0, 0, 1
+
+            ScrollView:
+                canvas.before:
+                    Color:
+                        rgba: 1, 0, 0, 0
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+
+                MDGridLayout:
+                    adaptive_height: True
+                    cols: 1
+                    padding: "15dp"
+                    spacing: "15dp"
+                    canvas:
+                        Color:
+                            rgba: (48/255, 68/225, 139/255, 1)
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+                        
+                    TitleLabel:
+                        text: "Gender"
+                    StyleItemCheck:
+                        group: "gender"
+                        text: "Male"
+
+                    StyleItemCheck:
+                        group: "gender"
+                        text: "Female"
+
+                    TitleLabel:
+                        text: "Height"
+                    InputAll:
+                        hint_text: """180 cm/5'6" """
+                    
+                    TitleLabel:
+                        text: "Weight"
+                    InputAll:
+                        hint_text: "60 kg/196 lbs"
+
+                    TitleLabel:
+                        text: "Bust/Chest"
+                    InputAll:
+                        hint_text: "38.2 in/97.1 cm"
+                    
+                    TitleLabel:
+                        text: "Waist"
+                    InputAll:
+                        hint_text: "37 in/94 cm"
+                    
+                    TitleLabel:
+                        text: "Hips"
+                    InputAll:
+                        hint_text: "36 in/90 cm"
+                    
+                    TitleLabel:
+                        text: "Bra Size: Band Size - Cup Size"
+                    InputAll:
+                        id: bra_size
+                        hint_text: "34DD/30A"
+                    
+                    Widget:
+                        size_hint_y: None
+                        height: 30
+                    
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDRectangleFlatButton:
+                            text: "yep, looks good!"
+                            pos_hint: {'center_x': .5}
+                            md_bg_color: 1, 1, 1, 1
+                            line_color: 1, 1, 1, 0
+                            text_color: get_color_from_hex('#b2a575')
+                            on_release: app.confirm_measurement()
+
+            # Bottom Panel
+            MDFloatLayout:
+                size_hint_y: 0.16
+                canvas:
+                    Color:
+                        rgba: (255/255, 251/255, 254/255, .85)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+                MDIconButton:
+                    id: homepage
+                    icon: 'home-outline'
+                    pos_hint: {'x': .05, 'center_y': .5}
+                    on_release: root.current = "screen3"
+                        
+                MDIconButton:
+                    id: measurement_page
+                    icon: 'pencil'
+                    pos_hint: {'x': .3083, 'center_y': .5}
+
+                MDIconButton:
+                    id: fitting_page
+                    icon: 'tshirt-crew-outline'
+                    pos_hint: {'x': .5667, 'center_y': .5}
+                    on_release: root.current = "screen5"
+
+                MDIconButton:
+                    id: checkout_page
+                    icon: 'cart-outline'
+                    pos_hint: {'x': .825, 'center_y': .5}
+                    on_release: root.current = "screen6"
