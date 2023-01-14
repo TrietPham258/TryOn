@@ -44,10 +44,10 @@
                     line_color: get_color_from_hex('#30448b')
                     text_color: get_color_from_hex('#30448b')
                     on_release:
-                        if app.file_manage.homepage_image != "images/Upload your image.jpg": \
+                        if app.file_manage.homepage_image != "assets/images/Upload your image.jpg": \
                         root.current = "screen7"
                     on_release:
-                        if app.file_manage.homepage_image == "images/Upload your image.jpg": \
+                        if app.file_manage.homepage_image == "assets/images/Upload your image.jpg": \
                         app.announcement("Upload your image")
 
                 MDSwitch:
