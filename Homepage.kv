@@ -1,0 +1,237 @@
+#:kivy 2.1.0
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+#: import get_color_from_hex kivy.utils.get_color_from_hex
+#: import MDDataTable kivymd.uix.datatables
+#: import NoTransition kivy.uix.screenmanager
+
+
+<ItemDrawer>:
+    theme_text_color: "Custom"
+    on_release: self.parent.set_color_item(self)
+
+    IconLeftWidget:
+        id: icon
+        icon: root.icon
+        theme_text_color: "Custom"
+        text_color: root.text_color
+
+
+<ContentNavigationDrawer>:
+    id: root.id
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+
+    AnchorLayout:
+        anchor_x: "left"
+        size_hint_y: None
+        height: avatar.height
+
+        Image:
+            id: avatar
+            size_hint: None, None
+            size: "56dp", "56dp"
+            source: "images/App Icon 2.jpg"
+
+    MDLabel:
+        text: "KivyMD library"
+        font_style: "Button"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    MDLabel:
+        text: "Developer: Triet Pham"
+        font_style: "Caption"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+
+<UI>
+    Screen:
+        name: "screen3"   
+        MDNavigationLayout:
+
+            ScreenManager:
+                id: screen_manager
+                    
+                Screen:
+                    name: 'screen0'
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        canvas:
+                            Color:
+                                rgba: (229/255, 224/255, 250/255, 1)
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+
+                        MDTopAppBar:
+                            id: homepage_top
+                            title: "Try on, why not?"
+                            md_bg_color: get_color_from_hex('#30448b')
+                            specific_text_color: 1, 1, 1, 1
+                            left_action_items: [["account-circle", lambda x: nav_drawer.set_state("open")]]
+                        
+                        ScrollView:
+                            MDFloatLayout:
+                                # See the outline of a layout
+                                canvas.before:
+                                    Color:
+                                        rgba: 1, 0, 0, 0
+                                    Line:
+                                        width: 1
+                                        rectangle: self.x, self.y, self.width, self.height
+
+                                Sample:
+                                    id: main_image
+                                    size: 150, 200
+                                    source: app.file_manage.homepage_image
+
+                                MDFloatingActionButton:
+                                    icon: 'tooltip-image'
+                                    size_hint: None, None
+                                    pos_hint: {'x': .8, 'y': .05}
+                                    on_release: app.file_manage.file_manager_open()
+
+                                MDRectangleFlatButton:
+                                    id: upload_image
+                                    text: "Upload Image"
+                                    pos_hint: {'center_x': .5, 'center_y': .15}
+                                    md_bg_color: 1, 1, 1, 0
+                                    line_color: get_color_from_hex('#30448b')
+                                    text_color: get_color_from_hex('#30448b')
+                                    on_release: 
+                                        root.ids.main_image.source = app.file_manage.homepage_image
+                                        root.ids.secondary_image.source = app.file_manage.homepage_image
+                                        root.ids.fitting_image.source = app.file_manage.homepage_image
+                                        app.announcement("Image Uploaded")
+
+                        # Bottom Panel
+                        MDFloatLayout:
+                            size_hint_y: 0.13   
+                            canvas:
+                                Color:
+                                    rgba: (255/255, 251/255, 254/255, .85)
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                            MDIconButton:
+                                id: homepage
+                                icon: 'home'
+                                pos_hint: {'x': .05, 'center_y': .5}
+                                
+                            MDIconButton:
+                                id: measurement_page
+                                icon: 'pencil-outline'
+                                pos_hint: {'x': .3083, 'center_y': .5}
+                                on_release: root.current = "screen4"   
+
+                            MDIconButton:
+                                id: fitting_page
+                                icon: 'tshirt-crew-outline'
+                                pos_hint: {'x': .5667, 'center_y': .5}
+                                on_release: root.current = "screen5"
+
+                            MDIconButton:
+                                id: checkout_page
+                                icon: 'cart-outline'
+                                pos_hint: {'x': .825, 'center_y': .5}
+                                on_release: root.current = "screen6"
+                
+                Screen:
+                    id: screen8
+                    name: 'screen8'
+                    MDFloatLayout:
+                        size_hint: 1, 1
+                        canvas:
+                            Color:
+                                rgba: 48/255, 68/225, 139/255, 1
+                            Rectangle:
+                                pos: self.pos
+                                size: self.size
+                        
+                        
+                        MDLabel:
+                            font_size: 25
+                            text: "[b]Order History[/b]"
+                            size_hint: None, None
+                            size: 150, 50
+                            color: 1, 1, 1, 1
+                            pos_hint: {'center_x': .5, 'top': .98}
+                            valign: 'center'
+                            halign: 'center'
+                    
+                        MDLabel:
+                            id: order_archive
+                            text: "Press to see"
+                            pos_hint: {'center_x': .5, 'top': .9}
+                            size_hint: 1, .7
+                            halign: 'center'
+                            font_size: 16
+                            canvas.before:
+                                Color:
+                                    rgba: 229/255, 224/255, 250/255, 1
+                                Rectangle:
+                                    pos: self.pos
+                                    size: self.size
+                        
+                        MDLabel:
+                            font_size: 17
+                            text: "(Product, Quantity, Order Number)"
+                            size_hint: None, None
+                            size: 280, 50
+                            color: 0, 0, 0, 1
+                            pos_hint: {'center_x': .5, 'top': .86}
+                            valign: 'center'
+                            halign: 'center'
+                        
+                        MDIconButton:
+                            icon: 'close-thick'
+                            pos_hint: {'x': .88, 'top': .98}
+                            icon_color: 1, 0, 0, 1
+                            on_release: 
+                                app.root.ids.screen_manager.current = 'screen0'
+                                app.root.ids.screen_manager.transition = NoTransition()
+                            
+                        FirstButton:
+                            text: "See Record"
+                            pos_hint: {'center_x': .5, 'top': .17}
+                            on_release: 
+                                inx = app.id_lst.index('order_archive')
+                                app.root.ids[app.id_lst[inx]].text = app.db.show_records()
+                                
+                        FirstButton:
+                            text: "Delete Record"
+                            pos_hint: {'center_x': .5, 'top': .07}
+                            on_release: app.db.delete_records()
+                            
+            MDNavigationDrawer:
+                id: nav_drawer
+
+                ContentNavigationDrawer:
+                    id: content_drawer
+                    nav_drawer: nav_drawer
+                    screen_manager: screen_manager
+                    ScrollView:
+
+                        DrawerList:
+                            id: md_list
+                            ItemDrawer:
+                                id: account_page
+                                text: "User"
+                                icon: "account"
+                            
+                            ItemDrawer:
+                                text: "Order History"
+                                icon: "clipboard-text-clock"
+                                on_release: 
+                                    app.root.ids.screen_manager.current = "screen8"
+                                    app.root.ids.screen_manager.transition = NoTransition()
+
+                            ItemDrawer:
+                                text: "Logout"
+                                icon: "logout-variant"
+                                on_press:
+                                    nav_drawer.set_state("close")
+                                    root.current = 'screen1'
+                                    app.reset_text_box()
