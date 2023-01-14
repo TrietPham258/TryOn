@@ -1,10 +1,23 @@
 # TryOn
 A Python application made with KivyMD and SQLite3
 
-How to run this program
+How to run this program --> End of file
 
 Follow this youtube video:
 https://www.youtube.com/watch?v=ycoKlFV3-iU&list=PLCC34OHNcOtpz7PJQ7Tv7hqFBP_xDDjqg&index=40&ab_channel=Codemy.com
+
+
+FullSail Emerging Technology Scholarship screencast (presentation + app)
+https://youtu.be/c4juUqtDezw
+
+
+FullSail Emerging Technology Scholarship screencast (app)
+https://youtu.be/deKBAVLDZgw
+
+
+
+
+How to run this program
 
 Step 0:
 Requirements: Kivy, KivyMD, Pillow, sqlite3
