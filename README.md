@@ -3,16 +3,17 @@ A Python application made with KivyMD and SQLite3
 
 How to run this program
 
+Follow this youtube video:
+https://www.youtube.com/watch?v=ycoKlFV3-iU&list=PLCC34OHNcOtpz7PJQ7Tv7hqFBP_xDDjqg&index=40&ab_channel=Codemy.com
+
 Step 0:
 Requirements: Kivy, KivyMD, Pillow, sqlite3
 
 Step 1:
-If you have already have kivy, kivymd, move up to step
-Install kivy
-
+Install kivy on your main cmd
 
 Step 2:
-Create a director (with Git, Git Bash, ...)
+Create a directory (with Git, Git Bash, ...)
 In Git Bash:
 $ mkdir /c/"your directory"
 
@@ -45,7 +46,7 @@ $ pip install kivy
 
 KivyMD (mutliple command lines)
 Clone git:
-$ git clone https://github.com/kivymd/kivymd/KivyMD.git --dept1
+$ git clone https://github.com/kivymd/KivyMD.git --dept1
 
 Check folders:
 $ ls
@@ -65,7 +66,6 @@ $ python main.py
 
 Any questions please contact me at:
 Email: trietpham.work@gmail.com
-
 
 
 
