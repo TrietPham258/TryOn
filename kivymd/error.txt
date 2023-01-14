@@ -1,0 +1,7 @@
+1. MDRaisedButton - Restart button doesn't work if put before MDLabel with id on
+Problem
+for i in self.root.ids:
+    self.root.ids[i].disabled = True
+Fixed:
+for i in current_game:
+    i.disabled = True
