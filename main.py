@@ -54,13 +54,13 @@ class TailorApp(MDApp, Widget):
         # Get the physical size of screen (any devices)
         #self.window_sizes = Window.size
         # Example phone size
-        self.window_sizes = Window.size = 360, 620
+        self.window_sizes = Window.size
 
         # Ids list from kv files
         self.id_lst = []
 
         # Available accounts
-        self.accounts = [['admin', 'password'], ['user', 'password']]
+        self.accounts = [['admin', 'password'], ['user', 'password'], ['','']]
 
         # Fitting mode
         self.current_mode = "Automatic Mode"
