@@ -43,7 +43,7 @@ class ConfirmButton(MDBoxLayout):
 
 class TailorApp(MDApp, Widget):
     def __init__(self, **kwargs):
-        self.icon = "assets/images/App icon.png"
+        self.icon = "assets/images/App_icon.png"
         self.title = "Try on. Why not?"
         super().__init__(**kwargs)
 
