@@ -3,11 +3,11 @@ A Python application made with KivyMD and SQLite3
 
 How to run this program --> End of file
 
-Presentation and App screencast
+Presentation and App screencast:
 https://youtu.be/c4juUqtDezw
 
 
-App screencast
+App screencast:
 https://youtu.be/deKBAVLDZgw
 
 
