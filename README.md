@@ -3,11 +3,11 @@ A Python application made with KivyMD and SQLite3
 
 How to run this program --> End of file
 
-FullSail Emerging Technology Scholarship screencast (presentation + app)
+Presentation and App screencast
 https://youtu.be/c4juUqtDezw
 
 
-FullSail Emerging Technology Scholarship screencast (app)
+App screencast
 https://youtu.be/deKBAVLDZgw
 
 
