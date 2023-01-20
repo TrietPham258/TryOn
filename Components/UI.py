@@ -17,7 +17,7 @@ class UI(ScreenManager):
     hint_text: root.hint_text
     icon_right: root.icon_right
     size_hint_x: None
-    width: 200
+    width: dp(200)
     font_size: 18
 
     # Position
