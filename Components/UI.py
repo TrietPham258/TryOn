@@ -1,5 +1,6 @@
 from kivy.uix.screenmanager import ScreenManager
 from kivy.lang import Builder
+from kivy.metrics import dp
 
 
 class UI(ScreenManager):
@@ -84,7 +85,7 @@ class UI(ScreenManager):
 <Sample@FitImage>
     source: root.source 
     size_hint: None, None
-    size: 60, 80
+    size: dp(60), dp(80)
     pos_hint: {'center_x': .5, 'center_y': .5}
 
 
@@ -99,7 +100,7 @@ class UI(ScreenManager):
             pos: self.pos
 
     size_hint: None, None
-    size: 60, 80
+    size: dp(60), dp(80)
     pos_hint: {'center_x': .5, 'center_y': .5}
 
 
@@ -119,19 +120,19 @@ class UI(ScreenManager):
             if app.current_mode == "Automatic Mode": \
             app.root.ids.drag_ob.drag_timeout = 0 
             if app.current_type == "Automatic Shirts" and app.current_mode == "Automatic Mode": \
-            app.root.ids.drag_ob.size = 109, 145 
+            app.root.ids.drag_ob.size = dp(109), dp(145) 
             if app.current_type == "Automatic Shirts" and app.current_mode == "Automatic Mode": \
-            app.root.ids.drag_ob.pos = app.root.ids.fitting_image.pos[0] + 88, app.root.ids.fitting_image.pos[1] + 175
+            app.root.ids.drag_ob.pos = app.root.ids.fitting_image.pos[0] + dp(88), app.root.ids.fitting_image.pos[1] + dp(175)
         on_release:
             if app.current_type == "Automatic Dresses" and app.current_mode == "Automatic Mode": \
-            app.root.ids.drag_ob.size = 248, 330
+            app.root.ids.drag_ob.size = dp(248), dp(330)
             if app.current_type == "Automatic Dresses" and app.current_mode == "Automatic Mode": \
-            app.root.ids.drag_ob.pos = app.root.ids.fitting_image.pos[0] + 19, app.root.ids.fitting_image.pos[1] + 24
+            app.root.ids.drag_ob.pos = app.root.ids.fitting_image.pos[0] + dp(19), app.root.ids.fitting_image.pos[1] + dp(24)
         on_release:
             if app.current_type == "Automatic Shorts" and app.current_mode == "Automatic Mode": \
-            app.root.ids.drag_ob.size = 129, 172
+            app.root.ids.drag_ob.size = dp(129), dp(172)
             if app.current_type == "Automatic Shorts" and app.current_mode == "Automatic Mode": \
-            app.root.ids.drag_ob.pos = app.root.ids.fitting_image.pos[0] + 80, app.root.ids.fitting_image.pos[1] + 69
+            app.root.ids.drag_ob.pos = app.root.ids.fitting_image.pos[0] + dp(80), app.root.ids.fitting_image.pos[1] + dp(69)
 
         Sample:
             source: root.source

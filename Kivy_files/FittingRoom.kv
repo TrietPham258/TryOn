@@ -16,7 +16,7 @@
 <EmptyButton>
     id: root.id
     size_hint: None, None
-    size: 60, 80
+    size: dp(60), dp(80)
     pos_hint: {'center_x': .5, 'center_y': .5}
     MDRectangleFlatButton:
         text: "None"
@@ -43,8 +43,8 @@
             size_hint: None, .6
             width: self.minimum_width
             orientation: 'horizontal'
-            padding: 10
-            spacing: 40
+            padding: dp(10)
+            spacing: dp(40)
 
             EmptyButton:
 
@@ -77,7 +77,7 @@
                 Sample:
                     id: fitting_image
                     source: app.file_manage.homepage_image
-                    size: 282, 376
+                    size: dp(282), dp(376)
                     pos_hint: {'center_x': .5, 'top': .97}
                                 
                 DragObject:
@@ -86,13 +86,13 @@
                     allow_stretch: False
                     keep_ratio: True
                     size_hint: None, None
-                    size: 109, 145
+                    size: dp(109), dp(145)
                     pos: fitting_image.pos[0] + 88, fitting_image.pos[1] + 175
 
                 MDLabel:
                     id: size_label
                     text: "S i z e"
-                    font_size: 13
+                    font_size: dp(13)
                     color: "black"
                     pos_hint: {'x': .01, 'top': 1.3}
 
