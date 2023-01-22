@@ -61,8 +61,8 @@ class UI(ScreenManager):
         password: True
         hint_text: root.hint_text
         size_hint_x: None
-        width: 200
-        font_size: 18
+        width: dp(200)
+        font_size: dp(18)
         fill_color_normal: 1, 1, 1, 1
         text_color_normal: 0, 0, 0, 1
         hint_text_color_normal: 0, 0, 0, .4
