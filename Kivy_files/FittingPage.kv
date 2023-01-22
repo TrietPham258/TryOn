@@ -33,7 +33,7 @@
                 Sample:
                     id: secondary_image
                     source: app.file_manage.homepage_image
-                    size: 282, 376
+                    size: dp(282), dp(376)
                     pos_hint: {'center_x': .5, 'top': .97}
                 
                 MDRectangleFlatButton:
@@ -53,20 +53,20 @@
                 MDSwitch:
                     id: mode
                     size_hint: None, None
-                    size: 50, 30
+                    size: dp(50), dp(30)
                     pos_hint: {'center_x': .5, 'top': .08}
                     on_active: app.fp_mode()
                 
                 MDLabel:
                     size_hint: None, None
-                    size: 150, 15
+                    size: dp(150), dp(15)
                     text: "Automatic Mode"
                     color: 0, 0, 0, 1
                     pos: mode.pos[0] - 130, mode.pos[1] + 7
                 
                 MDLabel:
                     size_hint: None, None
-                    size: 100, 15
+                    size: dp(100), dp(15)
                     text: "Sticker Mode"
                     color: 0, 0, 0, 1
                     pos: mode.pos[0] + 70, mode.pos[1] + 7
