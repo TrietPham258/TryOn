@@ -25,8 +25,9 @@ class FileManagement():
     def file_manager_open(self):
         PATH ="."
         if platform == "android":
-          from android.permissions import request_permissions, Permission
-            request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE, Permission.MANAGE_EXTERNAL_STORAGE])
+            import android
+            from android.permissions import request_permissions, Permission
+            request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE])
             app_folder = os.path.dirname(os.path.abspath(__file__))
             PATH = "/storage/emulated/0" # app_folder
         self.file_manager.show(PATH)  # output manager to the screen
