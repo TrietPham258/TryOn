@@ -24,18 +24,18 @@
 
 <FinalLabel@MDLabel>
     color: 0, 0, 0, 1   
-    font_size: 15
+    font_size: dp(15)
 
 
 <DesLabel@MDLabel>
     color: 0, 0, 0, 1   
-    font_size: 13
+    font_size: dp(13)
     minimum_width: 1
 
 
 <Product>
     size_hint: 1, None
-    height: 150
+    height: dp(150)
     source: ""
     text: ""
 
@@ -95,13 +95,13 @@
 
         MDTextField:
             id: quantity_input
-            font_size: 13
+            font_size: dp(13)
             mode: 'round'
             multiline: False
             pos_hint: {'top': .81}
             pos: quantity.pos[0] + 55, self.pos[1]
             size_hint_x: None
-            width: 50
+            width: dp(50)
             halign: 'center'
             valign: 'center'
 
@@ -143,7 +143,6 @@
 
             MDLabel:
                 text: "Order information"
-                font_sizez: 20
                 valign: "center"
                 halign: "center"
                 color: (0, 0, 0, 1)
