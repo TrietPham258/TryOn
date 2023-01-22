@@ -29,7 +29,7 @@ class CustomSlider(MDSlider):
     # To reduce the touch area
     def collide_point(self, x, y):
         # Width area, Height area
-        w_r, h_r = 80, 0
+        w_r, h_r = dp(80), dp(0)
         return self.x+w_r <= x <= self.right-w_r and self.y+h_r <= y <= self.top-h_r
 
 
