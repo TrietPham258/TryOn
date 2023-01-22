@@ -5,7 +5,7 @@
 
 <TitleLabel@MDLabel>
     color: get_color_from_hex("#b2a575")
-    font_size: 15
+    font_size: dp(15)
     minimum_width: 1
 
 <InputFirst@MDRelativeLayout>:
@@ -32,19 +32,11 @@
 
 
 <InputAll@MDTextField>
-    font_size: 15
+    font_size: dp(15)
     mode: "round"
     fill_color_normal: 1, 1, 1, 1
     hint_text_color_normal: 0, 0, 0, .4
     text_color_normal: (0, 0, 0, 1)
-    
-
-<InputFemale@MDTextField>
-    #id: bra_size
-    hint_text: ""
-    InputAll:
-        id: root.id
-        hint_text: root.hint_text
 
 
 <StyleItemCheck@MDBoxLayout>:
@@ -63,7 +55,7 @@
         
     MDLabel:
         text: root.text
-        font_size: 15
+        font_size: dp(15)
         color: (1, 1, 1, 1)    
     
 
@@ -86,7 +78,6 @@
 
             MDLabel:
                 text: "This is where you will enter/change your measurements"
-                font_sizez: 20
                 valign: "center"
                 halign: "center"
                 color: (0, 0, 0, 1)
