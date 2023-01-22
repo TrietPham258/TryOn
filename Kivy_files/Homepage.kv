@@ -152,10 +152,10 @@
                         
                         
                         MDLabel:
-                            font_size: 25
+                            font_size: dp(25)
                             text: "[b]Order History[/b]"
                             size_hint: None, None
-                            size: 150, 50
+                            size: dp(150), dp(50)
                             color: 1, 1, 1, 1
                             pos_hint: {'center_x': .5, 'top': .98}
                             valign: 'center'
@@ -167,7 +167,7 @@
                             pos_hint: {'center_x': .5, 'top': .9}
                             size_hint: 1, .7
                             halign: 'center'
-                            font_size: 16
+                            font_size: dp(16)
                             color: 0, 0, 0, 1
                             canvas.before:
                                 Color:
@@ -177,7 +177,7 @@
                                     size: self.size
                         
                         MDLabel:
-                            font_size: 17
+                            font_size: dp(17)
                             text: "(Product, Quantity, Order Number)"
                             size_hint: None, None
                             size: 280, 50
