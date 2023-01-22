@@ -18,7 +18,7 @@ class UI(ScreenManager):
     icon_right: root.icon_right
     size_hint_x: None
     width: dp(200)
-    font_size: 18
+    font_size: dp(18)
 
     # Position
     pos_hint: root.pos_hint
@@ -36,7 +36,7 @@ class UI(ScreenManager):
 <FirstButton@MDRoundFlatButton>
     id: root.id
     text: root.text
-    font_size: 15
+    font_size: dp(15)
     pos_hint: {'center_x': .5}
     md_bg_color: get_color_from_hex('#b2a575')
     line_color: 0, 0, 0, 0
