@@ -109,7 +109,7 @@ class TailorApp(MDApp, Widget):
             n = round(i*0.1, 1) + 1
             a = round(self.size_lst[0][0] * n)
             b = round(self.size_lst[0][1] * n)
-            self.size_lst.append([dp(a), dp(b)])        
+            self.size_lst.append([a, b])   
 
         # Remove the pre-laid slider and label for Automatic Mode
         self.root.ids.fittingroom_layout.remove_widget(self.root.ids.size_slider)
