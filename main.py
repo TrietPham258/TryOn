@@ -104,12 +104,12 @@ class TailorApp(MDApp, Widget):
 
         # Size list - must specify here, can't use self.root.ids.drag_ob.size
         # because of size update with Slider
-        self.size_lst = [[99, 132]]
+        self.size_lst = [[dp(99), dp(132)]]
         for i in range(1, 19):
             n = round(i*0.1, 1) + 1
             a = round(self.size_lst[0][0] * n)
             b = round(self.size_lst[0][1] * n)
-            self.size_lst.append([a, b])
+            self.size_lst.append([dp(a), dp(b)])
         
 
         # Remove the pre-laid slider and label for Automatic Mode
@@ -227,7 +227,7 @@ class TailorApp(MDApp, Widget):
             self.root.ids.fittingroom_layout.add_widget(self.root.ids.size_label)
             self.root.ids.fittingroom_layout.add_widget(self.root.ids.size_slider)
             self.root.ids.drag_ob.source = "assets/images/Blank Space.png"
-            self.root.ids.drag_ob.size = 99, 132
+            self.root.ids.drag_ob.size = dp(99), dp(132)
             
         elif self.current_mode == "Automatic Mode":
             self.root.ids.fittingroom_layout.remove_widget(self.root.ids.size_slider)
