@@ -1,4 +1,4 @@
-# TryOn
+# TryOnWhyNot
 A Python application made with KivyMD and SQLite3
 
 How to try this app on android --> Download the apk file in the "Try on. Why not Download link" (2 links for different versions of android)
