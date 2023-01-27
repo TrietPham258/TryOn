@@ -1,7 +1,7 @@
 # TryOn
 A Python application made with KivyMD and SQLite3
 
-How to try this app on android --> Download the apk file (Warning: currently only work with android version <= 10)
+How to try this app on android --> Download the apk file (Warning: currently only work with android version < 10)
 
 How to run this program on PC--> End of file
 
