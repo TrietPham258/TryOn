@@ -9,9 +9,8 @@ Presentation and App screencast:
 https://youtu.be/c4juUqtDezw
 
 
-App screencast:
-https://youtu.be/deKBAVLDZgw
-
+App installation and use instruction:
+https://drive.google.com/file/d/10S3J80ag3WvsP1mE5J2eAdbdQ58LRS5k/view?usp=share_link
 
 Promotion Video:
 https://drive.google.com/file/d/1H3GXX80GthyE0-7We9mfi7GwPRlzvo50/view
