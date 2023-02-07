@@ -5,10 +5,6 @@ How to try this app on android --> Download the apk file in the "Try on. Why not
 
 How to run this program on PC--> End of file
 
-Presentation and App screencast:
-https://youtu.be/c4juUqtDezw
-
-
 App installation and use instruction:
 https://drive.google.com/file/d/10S3J80ag3WvsP1mE5J2eAdbdQ58LRS5k/view?usp=share_link
 
