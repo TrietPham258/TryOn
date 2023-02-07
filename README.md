@@ -5,12 +5,12 @@ Showcase
 
 <img src="https://user-images.githubusercontent.com/122665327/217309038-28daca3c-65fd-4b38-a755-441b1df8ac99.jpg" width="270" height="480" />
 
-![4](https://user-images.githubusercontent.com/122665327/217309038-28daca3c-65fd-4b38-a755-441b1df8ac99.jpg)
+
+<img src="(https://user-images.githubusercontent.com/122665327/217309166-bb147def-a7af-4840-9680-7f7ca1ecd568.jpg" width="270" height="480" />
 
 
-![6](https://user-images.githubusercontent.com/122665327/217309166-bb147def-a7af-4840-9680-7f7ca1ecd568.jpg)
+<img src="https://user-images.githubusercontent.com/122665327/217309268-f73b9c14-9ec5-4c6d-b3b8-924544867cb7.jpg" width="270" height="480" />
 
-![10](https://user-images.githubusercontent.com/122665327/217309268-f73b9c14-9ec5-4c6d-b3b8-924544867cb7.jpg)
 
 How to try this app on android --> Download the apk file in the "Try on. Why not Download link" (2 links for different versions of android)
 
