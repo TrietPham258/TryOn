@@ -3,7 +3,7 @@ A Python application made with KivyMD and SQLite3
 
 Showcase
 
-<img src="https://camo.githubusercontent.com/..." data-canonical-src="[https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png](https://user-images.githubusercontent.com/122665327/217309038-28daca3c-65fd-4b38-a755-441b1df8ac99.jpg" width="200" height="400" />
+<img src="https://camo.githubusercontent.com/..." data-canonical-src="https://user-images.githubusercontent.com/122665327/217309038-28daca3c-65fd-4b38-a755-441b1df8ac99.jpg" width="200" height="400" />
 
 ![4](https://user-images.githubusercontent.com/122665327/217309038-28daca3c-65fd-4b38-a755-441b1df8ac99.jpg)
 
