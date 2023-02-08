@@ -1,5 +1,5 @@
 # TryOnWhyNot
-A Python application made with KivyMD and SQLite3
+A personal tailoring mobile application made with Python and KivyMD
 
 Showcase
 
